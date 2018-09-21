@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class TestClass {
 
     @Test
-    public void needCleaning() throws Exception {
+    public void cleaning() throws Exception {
         CoffeeMachine coffeeMachine = new CoffeeMachine();
 
         for(int i = 0; i <= 8; i++) {
@@ -20,30 +20,33 @@ public class TestClass {
 
         coffeeMachine.cleanMachine();
 
-        expStatus = "Machine is cleaned.";
+        expStatus = "Coffee Machine has cleaned.";
         assertEquals(coffeeMachine.getStatus(), expStatus);
     }
 
     @Test
-    public void getCoffee() throws Exception {
+    public void getCappuccino() throws Exception {
         CoffeeMachine coffeeMachine = new CoffeeMachine();
-
-        Coffee americano = CoffeeFactory.createCoffeeByType("americano");
         Coffee cappuccino = CoffeeFactory.createCoffeeByType("cappuccino");
 
-        String expAmericano = "U get ur fcking americano.";
-        String expCappuccino = "U get ur fcking cappuccino.";
-
-        coffeeMachine.getCupOfCoffee(americano);
-        assertEquals(expAmericano, coffeeMachine.getStatus());
-
+        String expCappuccino = "You got a cup of cappuccino.";
         coffeeMachine.getCupOfCoffee(cappuccino);
         assertEquals(expCappuccino, coffeeMachine.getStatus());
     }
 
     @Test
+    public void getAmericano() throws Exception {
+        CoffeeMachine coffeeMachine = new CoffeeMachine();
+        Coffee americano = CoffeeFactory.createCoffeeByType("americano");
+
+        String expStatus = "You got a cup of americano.";
+        coffeeMachine.getCupOfCoffee(americano);
+        assertEquals(expStatus, coffeeMachine.getStatus());
+    }
+
+    @Test
     public void notEnough() {
-        Coffee notEnough = new Coffee("testNotEnough", 2001, 1001, 151);
+        Coffee notEnough = new Coffee("test", 2001, 1001, 151);
         CoffeeMachine coffeeMachine = new CoffeeMachine();
         coffeeMachine.getCupOfCoffee(notEnough);
         String expStatus = "Not enough water milk beans.";

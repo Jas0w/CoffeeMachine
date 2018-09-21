@@ -14,8 +14,8 @@ public class MainController {
     @Autowired
     CoffeeMachine coffeeMachine;
 
-    @GetMapping("/getCoffee/{type}")
-    public CoffeeMachine cappuccino(@PathVariable String type) throws Exception {
+    @GetMapping("/getCoffee")
+    public CoffeeMachine cappuccino(@RequestParam("type") String type) throws Exception {
         Coffee coffee = CoffeeFactory.createCoffeeByType(type);
         coffeeMachine.getCupOfCoffee(coffee);
         return coffeeMachine;
@@ -27,8 +27,8 @@ public class MainController {
         return coffeeMachine;
     }
 
-    @GetMapping("/add/{type}/{amount}")
-    public CoffeeMachine addMaterial(@PathVariable String type, @PathVariable int amount) {
+    @GetMapping("/addMaterial")
+    public CoffeeMachine addMaterial(@RequestParam("type") String type, @RequestParam("amount") int amount) {
         if("water".equals(type)) {
             coffeeMachine.addWater(amount);
         } else if("milk".equals(type)) {

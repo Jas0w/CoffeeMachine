@@ -41,7 +41,7 @@ public class CoffeeMachine {
         milkReservoir.takeMaterial(coffee.getMilkRequired());
         beansReservoir.takeMaterial(coffee.getBeansRequired());
 
-        status = "U get ur fcking " + coffee.getType() + ".";
+        status = "You got a cup of " + coffee.getType() + ".";
     }
 
     private boolean isEnoughMaterials(Coffee coffee) {
@@ -70,7 +70,7 @@ public class CoffeeMachine {
 
     public void cleanMachine() {
         cleaningCounter = 0;
-        status = "Machine is cleaned.";
+        status = "Coffee Machine has cleaned.";
     }
 
     public void addWater(int amount) {
@@ -83,10 +83,6 @@ public class CoffeeMachine {
 
     public void addBeans(int amount) {
         status = beansReservoir.addMaterial(amount);
-    }
-
-    public int getCleaningCounter() {
-        return cleaningCounter;
     }
 
     public String getStatus() {
