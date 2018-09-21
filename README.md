@@ -1,38 +1,78 @@
 # CoffeeMachine
 
 # Get cup of coffee
-Title : Get cup of coffee.
+* **Title :** 
 
-URL : /getCoffee?type=:type
+  Get cup of coffee.
 
-Method : GET
+* **URL :** 
 
-URL Params : Required: type=[string]
+  /getCoffee?type=:type
 
-Success response content: {"waterReservoir":{"amount":[integer]},"milkReservoir":{"amount":[integer]},"beansReservoir":{"amount":[integer]},"status":"You got a cup of :type"}
+* **Method :** 
 
-Response Codes: Success (200 OK)
+  GET
+
+* **URL Params :** 
+
+  **Required:** 
+
+  type=[string]
+
+* **Success response content:** 
+
+  {"waterReservoir":{"amount":[integer]},"milkReservoir":{"amount":[integer]},"beansReservoir":{"amount":[integer]},"status":"You got a cup of :type"}
+
+* **Response Codes:**
+
+  Success (200 OK)
 
 # Clean machine
-Title : Clean machine.
+* **Title :** 
 
-URL : /clean
+  Clean machine.
 
-Method : GET
+* **URL :** 
 
-Success response content : {"waterReservoir":{"amount":[integer]},"milkReservoir":{"amount":[integer]},"beansReservoir":{"amount":[integer]},"status":"Coffee Machine has cleaned."}
+  /clean
 
-Response Codes : Success (200 OK)
+* **Method :** 
+
+  GET
+
+* **Success response content :**
+
+  {"waterReservoir":{"amount":[integer]},"milkReservoir":{"amount":[integer]},"beansReservoir":{"amount":[integer]},"status":"Coffee Machine has cleaned."}
+
+* **Response Codes :**
+
+  Success (200 OK)
 
 # Add materials
-Title : Add materials.
+* **Title :** 
 
-URL : /addMaterial
+  Add materials.
 
-Method : GET
+* **URL :** 
 
-URL Params : Required: type=[string] amount=[integer]
+  /addMaterial
 
-Success response content : {"waterReservoir":{"amount":[integer]},"milkReservoir":{"amount":[integer]},"beansReservoir":{"amount":[integer]},"status":":type successfully added."}
+* **Method :** 
 
-Response Codes : Success (200 OK)
+  GET
+
+* **URL Params :** 
+
+  **Required:** 
+
+  type=[string] 
+  
+  amount=[integer]
+
+* **Success response content :** 
+
+  {"waterReservoir":{"amount":[integer]},"milkReservoir":{"amount":[integer]},"beansReservoir":{"amount":[integer]},"status":":type successfully added."}
+
+* **Response Codes :** 
+
+  Success (200 OK)
